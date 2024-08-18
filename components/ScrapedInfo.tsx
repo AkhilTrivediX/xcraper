@@ -91,11 +91,11 @@ export default function ScrapedInfo({info}:{info:{
     },[brief])
 
     useEffect(()=>{
-        updateFormView();
+        updateFormView('preview');
     }, [forms])
 
     useEffect(()=>{
-        updateClickableView();
+        updateClickableView('preview');
     }, [clickables])
 
     function typeBrief(index: number){
