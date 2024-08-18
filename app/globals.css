@@ -19,3 +19,19 @@
 div{
   transition: all 300ms ease
 }
+
+.skeletonAnimation{
+  background: linear-gradient(-45deg, rgba(255,255,255,1), rgba(255,255,255,0.4),rgba(255,255,255,0.7), rgba(255,255,255,0.4), rgba(255,255,255,1));
+	background-size: 400% 400%;
+	animation: gradient 2s linear infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 100%;
+	}
+}

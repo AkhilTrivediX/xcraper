@@ -21,6 +21,15 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
     const [maxForms, setMaxForms] = useState(5);
     const [formsImagesToggle, setFormsImagesToggle] = useState(true);
 
+    /*
+    
+                            
+                        <div className="ml-1 opacity-60">Fetch Screenshots</div>
+                        <Switch checked={clickablesImagesToggle} onCheckedChange={setClickablesImagesToggle}/>
+                        <div className="ml-1 opacity-60">Fetch Screenshots</div>
+                        <Switch checked={formsImagesToggle} onCheckedChange={setFormsImagesToggle}/>
+    */
+
 
     async function requestScrape()
     {
@@ -31,10 +40,10 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
                 url: scrapingUrl,
                 brief: briefToggle,
                 briefLength: briefLength,
-                clickable: clickableToggle,
+                clickableToggle: clickableToggle,
                 maxClickable: maxClickable,
                 clickablesImages: clickablesImagesToggle,
-                forms: formsToggle,
+                formsToggle: formsToggle,
                 maxForms: maxForms,
                 formsImages: formsImagesToggle,
             });
@@ -73,8 +82,6 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
                     <Switch checked={clickableToggle} onCheckedChange={setClickableToggle}/>
                     <div className={"flex overflow-hidden items-center gap-2 "+(clickableToggle?"max-w-[900px]":"max-w-[0px]")}>
                         <ComboBox optionSet={[10, 25, 50, 100].map(x=>({value:x+'', label:x}))} defaultValue={25} sideTitle="Max Count" onValueChange={setMaxClickable}/>
-                        <div className="ml-1 opacity-60">Fetch Screenshots</div>
-                        <Switch checked={clickablesImagesToggle} onCheckedChange={setClickablesImagesToggle}/>
                     </div>
                 </div>
             </div>
@@ -88,8 +95,6 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
                     <Switch checked={formsToggle} onCheckedChange={setFormsToggle}/>
                     <div className={"flex overflow-hidden items-center gap-2 "+(formsToggle?"max-w-[900px]":"max-w-[0px]")}>
                         <ComboBox optionSet={[5, 10, 15, 20].map(x=>({value:x+'', label:x}))} defaultValue={5} sideTitle="Max Count" onValueChange={setMaxForms}/>
-                        <div className="ml-1 opacity-60">Fetch Screenshots</div>
-                        <Switch checked={formsImagesToggle} onCheckedChange={setFormsImagesToggle}/>
                     </div>
                 </div>
             </div>
