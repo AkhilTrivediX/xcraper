@@ -15,7 +15,7 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
     const [briefToggle, setBriefToggle] = useState(true);
     const [briefLength, setBriefLength] = useState(100);
     const [clickableToggle, setClickableToggle] = useState(true);
-    const [maxClickable, setMaxClickable] = useState(25);
+    const [maxClickable, setMaxClickable] = useState(100);
     const [clickablesImagesToggle, setClickablesImagesToggle] = useState(true);
     const [formsToggle, setFormsToggle] = useState(true);
     const [maxForms, setMaxForms] = useState(5);
@@ -81,7 +81,7 @@ export default function ScrapeForm({updateScrapeInfo}:{updateScrapeInfo:Function
                     </div>
                     <Switch checked={clickableToggle} onCheckedChange={setClickableToggle}/>
                     <div className={"flex overflow-hidden items-center gap-2 "+(clickableToggle?"max-w-[900px]":"max-w-[0px]")}>
-                        <ComboBox optionSet={[10, 25, 50, 100].map(x=>({value:x+'', label:x}))} defaultValue={25} sideTitle="Max Count" onValueChange={setMaxClickable}/>
+                        <ComboBox optionSet={[10, 25, 50, 100].map(x=>({value:x+'', label:x}))} defaultValue={100} sideTitle="Max Count" onValueChange={setMaxClickable}/>
                     </div>
                 </div>
             </div>

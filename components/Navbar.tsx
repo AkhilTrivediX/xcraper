@@ -9,7 +9,7 @@ export default function Navbar(){
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                         <div className="font-[800] text-xl font-mono">XCRAPE</div>
+                         <div className="font-[800] text-xl font-mono">XCRAPER</div>
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
